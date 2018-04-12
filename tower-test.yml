@@ -1,6 +1,6 @@
 ---
 - name: WinLin Check
-  hosts: windows
+  hosts: win123
   connection: local
   vars:
     values:
