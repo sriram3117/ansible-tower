@@ -1,11 +1,5 @@
 ---
-- name: WinLin Check
-  hosts: all
-  connection: local
-  vars:
-    values:
-      - value1
-      - value2
-      - value3
+- hosts:
+    - all
   tasks:
-    - debug: msg="{{ ansible_os_family}}"
+    - action: ping
