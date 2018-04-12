@@ -1,5 +1,4 @@
 ---
-
 - hosts: Dev
   tasks:
      - name: ping
