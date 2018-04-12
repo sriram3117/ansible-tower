@@ -1,0 +1,11 @@
+---
+- name: WinLin Check
+  hosts: all
+  connection: local
+  vars:
+    values:
+      - value1
+      - value2
+      - value3
+  tasks:
+    - debug: msg="{{ ansible_os_family}}"
