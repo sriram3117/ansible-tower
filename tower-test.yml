@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: win
   tasks:
   - name: ping
     command: ansible win -i hosts -m win_ping
