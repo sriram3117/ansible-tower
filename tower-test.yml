@@ -1,11 +1,7 @@
 ---
 - hosts: win
-  gather_facts: true
-  vars:
-    region: us-west-2
   tasks:
-    - name: create a file
+    - name: Touch a file (creates if not present, updates modification time if present)
       win_file:
-         region: "{{ region }}"
-         path: C:\Users
+         path: C:\Users\foo.conf
          state: touch
