@@ -1,5 +1,14 @@
 ---
 - hosts: win
+  gather_facts: true
+  vars:
+    region: us-west-2
   tasks:
-  - name: ping
-    command: ansible win -i hosts -m win_ping
+    - name: create a file
+      win_file:
+         region: "{{ region }}"
+         AWS_ACCESS_KEY_ID: "{{ access }}"
+         AWS_SECRET_ACCESS_KEY: "{{ secret }}"
+         path: C:\users
+         state: touch
+
