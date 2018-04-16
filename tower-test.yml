@@ -1,14 +1,5 @@
 ---
-- hosts: win
-  gather_facts: true
-  vars:
-    region: us-west-2
-  tasks:
-    - name: create a file
-      win_file:
-         region: "{{ region }}"
-         AWS_ACCESS_KEY_ID: "{{ access }}"
-         AWS_SECRET_ACCESS_KEY: "{{ secret }}"
-         path: C:\users
-         state: touch
-
+- name: Touch a file (creates if not present, updates modification time if present)
+  win_file:
+    path: C:\Users\foo.conf
+    state: touch
