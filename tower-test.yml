@@ -1,7 +1,11 @@
 ---
-- hosts: win
+- hosts: droplets
   tasks:
-    - name: Touch a file (creates if not present, updates modification time if present)
-      win_file:
-         path: C:\Users\foo.conf
-         state: touch
+    - name: Installs nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
+
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
